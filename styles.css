@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.loader-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loader-image img {
+    width: 80px;
+}
+
+.page-body {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#view-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card Content with Border */
+.card-content {
+    display: grid;
+    grid-template-rows: auto auto;  
+    grid-template-columns: 1fr 1fr; 
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: auto;                   
+    border: 4px solid #ddd;  
+    border-radius: 15px;       
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    overflow: hidden;              
+}
+
+.split-image {
+    width: 100%;
+    height: auto;
+}
+
+#split-left {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    align-self: end;
+    cursor: pointer;
+}
+
+#split-right {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    align-self: start;
+    cursor: pointer;
+}
+
+.center-text {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+@font-face {
+    font-family: 'AgainstPerfection';
+    src: url('AgainstPerfectionScriptPerso-mLMX5.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.center-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    height: 100%; 
+}
+
+.center-text p {
+    font-family: 'AgainstPerfection', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.4;
+    color: #ff5d73;
+    margin: 0;
+    padding: 0;
+}
+
+.center-text p.part-1 {
+    font-size: 3.5rem;
+}
+
+#message {
+    display: none;                     
+    margin: 20px;                     
+    padding: 10px;                    
+    border-radius: 10px;              
+}
+
+#message p {
+    margin: 5px 0;                  
+    padding: 5px;                    
+    font-family: 'AgainstPerfection', sans-serif; 
+    font-size: 1.5rem;                
+    line-height: 1.4;                 
+    color: #ff5d73;                   
+}
+
+/* Button View Style */
+.button-view {
+    background-color: #FFB3BA; 
+    color: #FFFFFF; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 1.5rem; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    transition: transform 0.3s; 
+}
+
+.button-view:hover {
+    background-color: #FF9B9B; 
+}
+
+#buttons {
+    display: flex;                     
+    justify-content: center;           
+    align-items: center;               
+    margin-top: 20px;                  
+    width: 100%;                       
+}
+
+.button.cta {
+    padding: 10px 20px;               
+    font-size: 1rem;                  
+    background-color: #FFB3BA;        
+    color: #fff;                      
+    border: none;                     
+    border-radius: 5px;              
+    cursor: pointer;                  
+    transition: background-color 0.3s; 
+    margin-right: 10px;                
+}
+
+.button.cta:hover {
+    background-color: #FF9B9B;        
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .card-content {
+        height: 300px;
+    }
+}
