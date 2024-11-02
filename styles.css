@@ -1,9 +1,11 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body */
 body {
     display: flex;
     align-items: center;
@@ -14,6 +16,7 @@ body {
     background-color: #f2f2f2;
 }
 
+/* Loader */
 .loader-image {
     position: fixed;
     top: 0;
@@ -31,6 +34,7 @@ body {
     width: 80px;
 }
 
+/* Page Body */
 .page-body {
     text-align: center;
     padding: 20px;
@@ -38,6 +42,7 @@ body {
     max-width: 600px;
 }
 
+/* View Card */
 #view-card {
     display: flex;
     flex-direction: column;
@@ -59,25 +64,13 @@ body {
     overflow: hidden;              
 }
 
+/* Images */
 .split-image {
     width: 100%;
     height: auto;
 }
 
-#split-left {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-    align-self: end;
-    cursor: pointer;
-}
-
-#split-right {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    align-self: start;
-    cursor: pointer;
-}
-
+/* Text Alignment */
 .center-text {
     grid-row: 1 / 3;
     grid-column: 1 / 3;
@@ -88,6 +81,7 @@ body {
     color: #333;
 }
 
+/* Font Face */
 @font-face {
     font-family: 'AgainstPerfection';
     src: url('AgainstPerfectionScriptPerso-mLMX5.otf') format('opentype');
@@ -95,15 +89,7 @@ body {
     font-style: normal;
 }
 
-.center-text {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    height: 100%; 
-}
-
+/* Text Style */
 .center-text p {
     font-family: 'AgainstPerfection', sans-serif;
     font-size: 3.5rem;
@@ -113,10 +99,7 @@ body {
     padding: 0;
 }
 
-.center-text p.part-1 {
-    font-size: 3.5rem;
-}
-
+/* Message Style */
 #message {
     display: none;                     
     margin: 20px;                     
@@ -149,12 +132,13 @@ body {
     background-color: #FF9B9B; 
 }
 
+/* Buttons */
 #buttons {
     display: flex;                     
     justify-content: center;           
     align-items: center;               
     margin-top: 20px;                  
-    width: 100%;                       
+    width: 100%;                        
 }
 
 .button.cta {
@@ -176,6 +160,19 @@ body {
 /* Responsiveness */
 @media (max-width: 600px) {
     .card-content {
-        height: 300px;
+        grid-template-columns: 1fr; /* One column for small screens */
+        height: auto;
+    }
+
+    .center-text p {
+        font-size: 2.5rem; /* Reduce text size on small screens */
+    }
+
+    #message p {
+        font-size: 1.2rem; /* Smaller message text */
+    }
+
+    .button-view {
+        font-size: 1.2rem; /* Smaller button text */
     }
 }
