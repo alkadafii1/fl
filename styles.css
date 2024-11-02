@@ -1,11 +1,9 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
 body {
     display: flex;
     align-items: center;
@@ -16,7 +14,6 @@ body {
     background-color: #f2f2f2;
 }
 
-/* Loader */
 .loader-image {
     position: fixed;
     top: 0;
@@ -34,7 +31,6 @@ body {
     width: 80px;
 }
 
-/* Page Body */
 .page-body {
     text-align: center;
     padding: 20px;
@@ -42,64 +38,65 @@ body {
     max-width: 600px;
 }
 
-/* View Card */
 #view-card {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Card Content with Border */
 .card-content {
     display: grid;
-    grid-template-rows: auto auto;  
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr; /* Dua kolom */
+    grid-template-rows: 1fr 1fr; /* Dua baris */
     position: relative;
     width: 100%;
     max-width: 600px;
-    height: auto;                   
     border: 4px solid #ddd;  
     border-radius: 15px;       
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
     overflow: hidden;              
 }
 
-/* Images */
 .split-image {
     width: 100%;
     height: auto;
 }
 
-/* Text Alignment */
+#split-left {
+    grid-column: 1; /* Tempatkan di kolom pertama (kiri) */
+    grid-row: 2; /* Tempatkan di baris kedua (bawah) */
+}
+
+#split-right {
+    grid-column: 2; /* Tempatkan di kolom kedua (kanan) */
+    grid-row: 1; /* Tempatkan di baris pertama (atas) */
+}
+
 .center-text {
-    grid-row: 1 / 3;
-    grid-column: 1 / 3;
+    grid-column: 1 / span 2; /* Teks meliputi kedua kolom */
+    grid-row: 1 / span 2; /* Teks meliputi kedua baris */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #333;
+    text-align: center; 
 }
 
-/* Font Face */
 @font-face {
     font-family: 'AgainstPerfection';
     src: url('AgainstPerfectionScriptPerso-mLMX5.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
 }
 
-/* Text Style */
 .center-text p {
     font-family: 'AgainstPerfection', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3.5rem; /* Ukuran font besar */
     line-height: 1.4;
     color: #ff5d73;
     margin: 0;
     padding: 0;
 }
 
-/* Message Style */
 #message {
     display: none;                     
     margin: 20px;                     
@@ -116,7 +113,6 @@ body {
     color: #ff5d73;                   
 }
 
-/* Button View Style */
 .button-view {
     background-color: #FFB3BA; 
     color: #FFFFFF; 
@@ -125,14 +121,13 @@ body {
     font-size: 1.5rem; 
     cursor: pointer; 
     border-radius: 8px; 
-    transition: transform 0.3s; 
+    transition: background-color 0.3s; 
 }
 
 .button-view:hover {
     background-color: #FF9B9B; 
 }
 
-/* Buttons */
 #buttons {
     display: flex;                     
     justify-content: center;           
@@ -160,19 +155,24 @@ body {
 /* Responsiveness */
 @media (max-width: 600px) {
     .card-content {
-        grid-template-columns: 1fr; /* One column for small screens */
-        height: auto;
+        grid-template-columns: 1fr; /* Satu kolom di perangkat kecil */
+        grid-template-rows: auto; /* Baris otomatis */
+    }
+
+    #split-left, #split-right {
+        width: 100%; /* Pastikan gambar mengambil lebar penuh */
     }
 
     .center-text p {
-        font-size: 2.5rem; /* Reduce text size on small screens */
-    }
-
-    #message p {
-        font-size: 1.2rem; /* Smaller message text */
+        font-size: 2rem; /* Mengurangi ukuran font di perangkat kecil */
     }
 
     .button-view {
-        font-size: 1.2rem; /* Smaller button text */
+        font-size: 1.2rem; /* Ukuran tombol di perangkat kecil */
+        padding: 8px 16px; /* Padding tombol */
+    }
+
+    #message p {
+        font-size: 1.2rem; /* Mengurangi ukuran font pesan di perangkat kecil */
     }
 }
